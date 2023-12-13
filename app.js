@@ -12,7 +12,7 @@ const diceImg = document.querySelector(".dice");
 let scores, currentScore, activePlayer, playing, winningScore;
 
 function init() {
-  winningScore = 10;
+  winningScore = 108;
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 1;
@@ -27,6 +27,8 @@ function init() {
   player2Board.classList.remove("winner");
   player1Board.classList.add("active");
   player2Board.classList.remove("active");
+  diceImg.classList.add("hidden");
+  console.log("aaaa");
 }
 
 init();
@@ -45,6 +47,7 @@ rollDiceBtn.addEventListener("click", function () {
   if (playing) {
     const dice = Math.floor(Math.random() * 6) + 1;
     diceImg.setAttribute("src", `img/dice${dice}.png`);
+    diceImg.classList.remove("hidden");
 
     if (dice !== 1) {
       //add dice to current score

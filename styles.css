@@ -124,6 +124,10 @@ body {
   background-color: #444;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (max-width: 580px) {
   .board {
     height: 37rem;
