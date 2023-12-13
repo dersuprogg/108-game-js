@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom, dodgerblue, firebrick);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  background-color: #c6c6c6;
+  width: 80%;
+  max-width: 80rem;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: space-around;
+  height: 45rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.player-board {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6.4rem;
+  padding: 3.2rem 4.8rem;
+  opacity: 0.6;
+  filter: blur(1px);
+  transition: all 0.4s;
+}
+
+.active {
+  opacity: 1;
+  background-color: #d6d6d6;
+  filter: blur(0);
+}
+
+.player-1-score-board,
+.player-2-score-board {
+  text-align: center;
+  text-transform: uppercase;
+}
+.player-1-score-board h1,
+.player-2-score-board h1 {
+  font-size: 3.6rem;
+  font-weight: normal;
+}
+
+.player-1-score,
+.player-2-score {
+  font-size: 6.2rem;
+  margin-top: 1.6rem;
+  color: crimson;
+}
+
+.current-score-board {
+  width: 10rem;
+  background-color: crimson;
+  text-align: center;
+  color: #f6f6f6;
+  font-size: 2rem;
+  margin-bottom: 3.2rem;
+  width: 15rem;
+  padding: 1.2rem 0;
+  border-radius: 0.3em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.current-score-board p:nth-child(2) {
+  font-size: 3rem;
+}
+
+.btn {
+  position: absolute;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  background-color: #ffffffbb;
+  border-radius: 0.3em;
+  font-size: 1.6rem;
+  color: #444;
+  z-index: 10;
+}
+
+.btn.btn-new-game {
+  top: 1rem;
+}
+.btn.btn-hold {
+  bottom: 7rem;
+}
+
+.btn.btn-roll-dice {
+  bottom: 12rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.6);
+}
+
+.dice {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-100%);
+  z-index: 10;
+}
+
+.winner {
+  background-color: #444;
+}
+
+@media (max-width: 580px) {
+  .board {
+    height: 37rem;
+  }
+  .player-1-score-board h1,
+  .player-2-score-board h1 {
+    font-size: 1.8rem;
+  }
+
+  .player-board {
+    align-items: center;
+    padding: 5rem 0 0 0;
+  }
+
+  .player-1-score,
+  .player-2-score {
+    font-size: 3.2rem;
+  }
+
+  .current-score-board {
+    width: 10rem;
+    font-size: 1.6rem;
+    flex-direction: row;
+    /* padding: 1rem 0.5rem; */
+    justify-content: center;
+  }
+
+  .current-score-board p:nth-child(2) {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  .btn.btn-new-game {
+    top: 1rem;
+  }
+  .btn.btn-hold {
+    bottom: 10rem;
+  }
+
+  .btn.btn-roll-dice {
+    bottom: 14rem;
+  }
+}
