@@ -73,7 +73,7 @@ holdBtn.addEventListener("click", function () {
         .querySelector(`.player-${activePlayer}-board`)
         .classList.add("winner");
       playing = false;
-      diceImg.removeAttribute("src");
+      diceImg.classList.add("hidden");
     } else {
       switchPlayer();
     }
